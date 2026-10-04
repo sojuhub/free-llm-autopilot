@@ -1,11 +1,11 @@
 ---
 name: "free-llm-autopilot"
-description: "Set up and maintain free LLM APIs: discover providers, onboard eligible accounts, adapt model routing to the user's environment, retire unavailable routes, and register one daily maintenance routine. Use for free-tier setup or maintenance, not every browser task."
+description: "Set up and maintain free LLM APIs for Aside first, adapting to other agents when requested: discover providers, onboard eligible accounts, adapt model routing to the user's environment, retire unavailable routes, and register one daily maintenance routine. Use for free-tier setup or maintenance, not every browser task."
 ---
 
-# Free LLM Autopilot
+# Aside Free LLM Autopilot
 
-A single-file skill for an agent with web access, authenticated browser tools, local configuration access, and optionally an existing scheduler. No bundled scripts, server, container, or custom scheduler are required. Use the user's language when reporting.
+An Aside-first setup and maintenance skill. Help the user reach a verified browser task using an eligible free LLM, then keep their managed routes current. Adapt to other agents when requested; do not assume Aside is installed everywhere. The executable instructions remain self-contained in this file. README.md is the human-facing introduction, not a runtime dependency. An executor needs web access, authenticated browser tools, local configuration access, and optionally an existing scheduler. No bundled scripts, server, container, or custom scheduler are required. Use the user's language when reporting.
 
 ## Install and invoke
 
@@ -29,6 +29,22 @@ Inspect only the host, account and application relevant to this task:
 - Credentials belong in the host's supported credential manager or owner-restricted secret storage. Configuration references secrets; this file, prompts, repositories and routine logs never contain them.
 
 Use the client's existing private state or routine record for account references, managed entries, retry times and receipts. This distributed skill remains one Markdown file; normal app configuration and scheduler state still exist. Do not add a second database or monitoring daemon.
+
+## Aside-specific setup and acceptance
+
+For an Aside target, read its current native `aside` skill and supported model-configuration guidance. An external CLI controller should read `aside guide`; before REPL use, read `aside guide repl` and the relevant native skills. A native Aside agent uses its native tools rather than launching another CLI inside itself. Prefer available documented capability over guessed method names.
+
+1. Identify the intended Aside host/profile and its current model selection. A profile, configuration path or provider ID from someone else's installation is not portable.
+2. Use the supported custom-model configuration surface for that version. Map provider ID, exact model ID, base URL, protocol, key reference, context limits and tool/image capabilities. Do not copy another person's models.json wholesale or edit an app bundle. Preserve existing providers.
+3. Verify the imported model is discoverable/selectable. Start a NEW task with that explicit provider/model; do not change every default/category as part of import. If the user asks for a free default, apply it after the task passes and explain the affected categories.
+4. Use a public page such as https://example.com for a harmless read. Require both a browser-tool result and a final answer grounded in that page. Confirm the actual responding model from the session's response metadata. A text-only API response or saved model setting does not establish Aside browser compatibility.
+5. If an external controller launches the task, use the current supported `--model provider/model` option with the discovered identifier. Preserve the session ID for inspection/continuation. No personal wrapper script is required by this project.
+6. Prefer Aside's existing routine system for an Aside-only installation. Inspect existing routines through native tools and use the currently documented creation/update surface. Read-only routine-list methods are not evidence of a create API; do not invent `aside.routines.create`.
+7. Verify the routine's chosen executor/model is ready independently of the route under maintenance. If only that route exists, report the bootstrap limitation instead of promising self-repair during a complete provider outage.
+
+An instruction skill does not intercept all model calls. Distinguish (a) an explicitly selected model, (b) new-session defaults, and (c) agent-directed selection after reading this skill. Do not claim universal automatic GUI failover or in-flight model migration. An existing external routing helper is environment-specific and is not shipped here.
+
+Setup acceptance: current skill loaded, target profile confirmed, model listed, one new public browser task completed under that model, and daily routine readback verified if requested. Report each separately if some remain incomplete. Maintenance can update model eligibility without silently rewriting the user's broader quality-first routing policy.
 
 ## 2. Discover and qualify providers
 
