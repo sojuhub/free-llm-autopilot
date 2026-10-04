@@ -1,5 +1,5 @@
 ---
-name: "free-llm-autopilot"
+name: "aside-free-llm-autopilot"
 description: "Set up and maintain free LLM APIs for Aside first, adapting to other agents when requested: discover providers, onboard eligible accounts, adapt model routing to the user's environment, retire unavailable routes, and register one daily maintenance routine. Use for free-tier setup or maintenance, not every browser task."
 ---
 
@@ -9,11 +9,11 @@ An Aside-first setup and maintenance skill. Help the user reach a verified brows
 
 ## Install and invoke
 
-Place this file at `<your agent's user-skill directory>/free-llm-autopilot/SKILL.md`, or ask your agent to install this file using its supported skill workflow. Discover the real directory rather than assuming an OS, username, profile number, app, or model.
+Place this file at `<your agent's user-skill directory>/aside-free-llm-autopilot/SKILL.md`, or ask your agent to install this file using its supported skill workflow. Discover the real directory rather than assuming an OS, username, profile number, app, or model.
 
 Example request:
 
-> Set up Free LLM Autopilot in my environment. Discover free LLM APIs, automatically sign up for eligible new providers using my designated account, connect and verify them, remove retired managed routes, and register one daily maintenance routine. Keep incremental API spending at zero. Maintain this local skill's provider knowledge automatically.
+> Set up Aside Free LLM Autopilot in my environment. Discover free LLM APIs, automatically sign up for eligible new providers using my designated account, connect and verify them, remove retired managed routes, and register one daily maintenance routine. Keep incremental API spending at zero. Maintain this local skill's provider knowledge automatically.
 
 An installation or read-only review alone does not start signup, alter routing, or register a routine. An explicit setup/maintenance request covering these actions authorizes them within the user's stated scope; do not ask again for every eligible provider. Reading this public file is not consent on behalf of someone else.
 
@@ -121,7 +121,7 @@ The routine must have access to the same current skill, necessary host tools and
 
 Use this prompt, substituting only the discovered skill location and established user policy:
 
-> Read the current free-llm-autopilot SKILL.md from its installed original. Perform daily maintenance under the saved setup authorization: recheck known free offers; discover eligible new providers; complete authorized free signup, verification and connection; verify changed routes with small public probes; remove definitively retired owned routes; cool down transient failures; refresh the public provider facts in the same skill. Preserve private/quality routing, existing accounts, other configuration and active sessions. No new paid spending, no duplicate accounts or routines, no task replay. Stop within the maintenance budget. Report additions, removals, cooldowns, unresolved onboarding, sources and actual verification. If a previous run is still active, skip duplicate execution. Publish public changes only under the separate saved repository authorization.
+> Read the current aside-free-llm-autopilot SKILL.md from its installed original. Perform daily maintenance under the saved setup authorization: recheck known free offers; discover eligible new providers; complete authorized free signup, verification and connection; verify changed routes with small public probes; remove definitively retired owned routes; cool down transient failures; refresh the public provider facts in the same skill. Preserve private/quality routing, existing accounts, other configuration and active sessions. No new paid spending, no duplicate accounts or routines, no task replay. Stop within the maintenance budget. Report additions, removals, cooldowns, unresolved onboarding, sources and actual verification. If a previous run is still active, skip duplicate execution. Publish public changes only under the separate saved repository authorization.
 
 Read back routine ID, owner, recurrence, timezone, enabled state and next run. Configuration is not proof of execution. On a completed scheduled run, inspect its receipt and report the actual outcome. If authentication or tools are unavailable in background execution, keep the failure visible and identify the supported next step.
 
